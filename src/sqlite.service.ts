@@ -4,8 +4,11 @@ import { parse } from 'url';
 import { tulis } from './file';
 
 const dbSiswa = new SQLite('./database/siswa.db');
-let current_datetime = new Date()
-let mydate = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
+
+function mydate(){
+    let current_datetime = new Date();
+    return current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+}
 
 export function siswaService(req: IncomingMessage, res: ServerResponse){
     const url = parse(req.url, true);
@@ -18,7 +21,7 @@ export function siswaService(req: IncomingMessage, res: ServerResponse){
     dbSiswa.getSiswa(readSiswa, query['name'])
 
     function readSiswa(siswa : Siswa){
-        tulis(`${mydate}-User melihat detil siswa ${query['name']}`)
+        tulis(`${mydate()}-User melihat detil siswa ${query['name']}`)
         res.write(JSON.stringify(siswa));
         res.end();
     }
@@ -35,7 +38,7 @@ export function listService(req: IncomingMessage, res: ServerResponse){
     dbSiswa.getList(readList, Number(query['limit']) , Number(query['offset']), query['sortby'], query['sortdir'], query['classroom']);
 
     function readList(siswa : Siswa){
-        tulis(`${mydate}-User melihat list siswa`)
+        tulis(`${mydate()}-User melihat list siswa`)
         res.write(JSON.stringify(siswa));
         res.end();
     }
@@ -54,7 +57,7 @@ export function addService(req: IncomingMessage, res: ServerResponse){
             res.statusCode = 400;
             res.end();
         }
-        tulis(`${mydate}-User menambahkan siswa ${query['name']}`)
+        tulis(`${mydate()}-User menambahkan siswa ${query['name']}`)
         res.write('Siswa telah ditambahkan');
         res.end();
     }
@@ -73,7 +76,7 @@ export function deleteService(req: IncomingMessage, res: ServerResponse){
             res.statusCode = 400;
             res.end();
         }
-        tulis(`${mydate}-User menghapus siswa ${query['name']}`)
+        tulis(`${mydate()}-User menghapus siswa ${query['name']}`)
         res.write(`Siswa ${query['name']} telah dihapus`);
         res.end();
     }
@@ -92,7 +95,7 @@ export function updateService(req: IncomingMessage, res: ServerResponse){
             res.statusCode = 400;
             res.end();
         }
-        tulis(`${mydate}-User mengubah kelas ${query['name']} menjadi ${query['classroom']} `)
+        tulis(`${mydate()}-User mengubah kelas ${query['name']} menjadi ${query['classroom']} `)
         res.write(`Siswa ${query['name']} telah di-update`);
         res.end();
     }

@@ -27,3 +27,21 @@
 2019-10-15 15:37:52-User melihat detil siswa Agung
 2019-10-15 15:37:52-User melihat list siswa
 2019-10-15 15:37:52-User menghapus siswa Agung
+2019-10-15 15:37:52-User melihat detil siswa Arifin
+2019-10-15 15:37:52-User melihat list siswa
+2019-10-15 15:37:52-User melihat list siswa
+2019-10-15 15:37:52-User melihat list siswa
+2019-10-15 15:37:52-User mengubah kelas Arifin menjadi 8A 
+2019-10-15 15:37:52-User melihat list siswa
+2019-10-15 15:45:34-User menambahkan siswa Agung
+2019-10-15 15:45:34-User mengubah kelas Agung menjadi 8A 
+2019-10-15 15:45:34-User melihat detil siswa Agung
+2019-10-15 15:45:34-User melihat list siswa
+2019-10-15 15:45:34-User menghapus siswa Agung
+2019-10-15 15:46:3-User melihat list siswa
+2019-10-15 15:46:13-User melihat list siswa
+2019-10-15 15:57:47-User menambahkan siswa Agung
+2019-10-15 15:57:47-User mengubah kelas Agung menjadi 8A 
+2019-10-15 15:57:47-User melihat detil siswa Agung
+2019-10-15 15:57:47-User melihat list siswa
+2019-10-15 15:57:47-User menghapus siswa Agung

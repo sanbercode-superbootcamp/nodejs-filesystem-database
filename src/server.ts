@@ -5,8 +5,6 @@ import { siswaService, listService,
     updateService } from './sqlite.service';
 import { bacaService } from './file.service';
 
-// import { Database } from 'sqlite3';
-
 
 const server = createServer(function(req, res){
     const url = parse(req.url);
@@ -39,13 +37,8 @@ const server = createServer(function(req, res){
 
 server.listen(3000);
 
-// function read(siswa: Siswa){
-//     console.log(siswa);
-// }
 
-// dbSiswa.getRow(read, 'Kevin');
-// dbSiswa.insertRow('Joe', '8E');
-
+// import { Database } from 'sqlite3';
 
 
 // const queryCreateTable = `CREATE TABLE IF NOT EXISTS siswa(
@@ -62,19 +55,3 @@ server.listen(3000);
 //     }
     
 // })
-
-// const db = new Database('./database/siswa.db');
-
-// const queryInsertSQL = `INSERT INTO siswa(name, classroom) VALUES (?, ?)`
-
-// db.run(queryInsertSQL, ['Kevin', '9E'], (err) => {
-//     if(err){
-//         console.log(`Gagal membuat data siswa ${err}`);
-//     }else{
-//         console.log('Sukses membuat data siswa')
-//     }
-    
-// })
-
-
-// db.close()

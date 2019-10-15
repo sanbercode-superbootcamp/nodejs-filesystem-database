@@ -9,7 +9,8 @@
     "build": "tsc",
     "dev": "tsc -w",
     "build-e2e": "tsc -w -p test",
-    "test-e2e": "mocha --config ./test/.mocharc.yaml"
+    "test-e2e": "mocha --config ./test/.mocharc.yaml",
+    "start" : "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
