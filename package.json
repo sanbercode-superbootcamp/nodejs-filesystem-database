@@ -1,0 +1,27 @@
+{
+  "name": "database-diajar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -w",
+    "test": "mocha",
+    "start": "node ./dist/server.js",
+    "build-e2e": "tsc -w -p test",
+    "test-e2e": "mocha --config ./test/.mocharc.yaml",
+    "nodemon": "nodemon delay 1000ms --watch dist dist/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sqlite3": "^4.1.0",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.12",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1"
+  }
+}
