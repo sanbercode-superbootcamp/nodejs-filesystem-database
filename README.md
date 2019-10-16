@@ -8,6 +8,7 @@ npm start
 ```
 
 ## to test webservice :
+url : `http://localhost:3000`
 
 | Endpoint        | Method           | Param  | Example
 | ------------- |:-------------:| -----:| -----:|
