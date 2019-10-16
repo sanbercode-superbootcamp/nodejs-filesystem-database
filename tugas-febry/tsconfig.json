@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2017",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/@types"
+        ]
+    },
+    "exclude": [
+        "./test"
+    ]
+}
