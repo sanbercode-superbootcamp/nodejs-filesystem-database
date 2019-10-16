@@ -1,0 +1,35 @@
+{
+  "name": "service-with-fs-and-db",
+  "version": "1.0.0",
+  "description": "Webservice with fs and db",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "mocha",
+    "test-e2e": "mocha --config ./test/.mocharc.yaml",
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "build-e2e": "tsc -p test",
+    "build-e2e-watch": "tsc -w -p test",
+    "start": "node ."
+  },
+  "author": "Robith Ritz",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/chai-fs": "^2.0.2",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.12",
+    "@types/request": "^2.48.3",
+    "@types/request-promise-native": "^1.0.17",
+    "@types/sqlite3": "^3.1.5",
+    "chai": "^4.2.0",
+    "chai-fs": "^2.0.0",
+    "mocha": "^6.2.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "typescript": "^3.6.4"
+  }
+}
