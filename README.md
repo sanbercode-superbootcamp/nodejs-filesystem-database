@@ -1,21 +1,19 @@
-File System and Database Integration
-===================
+# Webservice Siswa with FS and DB
 
-Content
--------
-### Repository Anatomy
-
-- `dist` - output folder where the compiled ts code stored
-- `src` - source code used on training
-
-Getting Started
----------------
-
-``` bash
+## Getting Started
+```
 npm install
 npm run build
 npm start
 ```
-Make sure you include folder of the compiled code at `.gitignore`
 
-The presentation slide can be seen [here](https://drive.google.com/open?id=1cxuA_uxQSpfXB9LBXkU-SPD6dhgFTzov8wzC5zlpcnA)
+## to test webservice :
+url : `http://localhost:3000`
+
+| Endpoint        | Method           | Param  | Example
+| ------------- |:-------------:| -----:| -----:|
+| /siswa      | GET | name: string | /siswa?name=bambang
+| /siswa/list      | GET | sortBy: string, sortDirection: string, limit: number, offset: number, classroom?: string | /siswa/list?sortBy=name&sortDirection=DESC
+| /siswa/add      | GET | name: string, classroom: string | /siswa/add?name=bambang&classroom=1A
+| /siswa/update      | GET | name: string, classroom: string | /siswa/update?name=bambang&classroom=1B
+| /siswa/delete      | GET | name: string | /siswa/delete?name=bambang
