@@ -1,0 +1,38 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node .",
+    "start-index": "node ./dist/index.js",
+    "test": "mocha",
+    "test-e2e": "mocha --config ./test/.mocharc.yaml",
+    "dev": "tsc -w",
+    "dev-test": "tsc -w -p test",
+    "build": "tsc",
+    "build-test": "tsc -p test",
+    "nodemon": "nodemon --delay 1500ms -e js --watch dist",
+    "setup-db": "node ./dist/db/setup"
+  },
+  "author": "hasannabil",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.7.12",
+    "@types/request": "^2.48.3",
+    "request": "^2.88.0",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/chai-fs": "^2.0.2",
+    "@types/request-promise-native": "^1.0.17",
+    "@types/sqlite3": "^3.1.5",
+    "chai": "^4.2.0",
+    "chai-fs": "^2.0.0",
+    "mocha": "^6.2.1",
+    "nodemon": "^1.19.3",
+    "request-promise-native": "^1.0.7",
+    "sqlite3": "^4.1.0"
+  }
+}
