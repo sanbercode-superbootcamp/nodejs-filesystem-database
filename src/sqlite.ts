@@ -1,4 +1,7 @@
 import { Database } from "sqlite3";
+import { appendFileSync } from 'fs';
+
+const filename = 'logs.txt';
 
 export interface Siswa {
     id?:number;
@@ -102,3 +105,15 @@ export class SQLite {
         })
     }
 };
+
+export function outputLog(data: string | string[]): Boolean {
+
+    try {
+        console.log('data masuk');
+        appendFileSync(filename, data);
+        return true; 
+    } catch(error) {
+        console.log('ini error: ' + error);
+        return error;
+    }
+}

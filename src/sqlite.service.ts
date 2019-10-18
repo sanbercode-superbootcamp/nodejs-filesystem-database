@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { parse } from 'url';
-import { SQLite, Siswa, SORT_BY, SORT_TYPE } from './sqlite';
+import { SQLite, Siswa, outputLog } from './sqlite';
 
 const dbSiswa = new SQLite('./dist/db/siswa.db');
 
@@ -25,7 +25,10 @@ export function infoSiswaSVC(req: IncomingMessage, res: ServerResponse) {
             res.end();
             return;
         }
-        res.write(JSON.stringify(siswa))
+        res.write(JSON.stringify(siswa));
+        let log = `${dateString()} ${timeString()} - User melihat detail siswa ${name}.\n`
+        console.log(log);
+        outputLog(log);
         res.end();
     });
     
@@ -42,6 +45,9 @@ export function selectAllSiswaSVC(req: IncomingMessage, res: ServerResponse) {
     // const name = query['name'].toString();
    
     dbSiswa.selectAllSiswa( data => {
+        let log = `${dateString()} ${timeString()} - User melihat detail semua siswa.\n`
+        console.log(log);
+        outputLog(log);
         res.write(JSON.stringify(data))
         res.end();
     });
@@ -69,6 +75,9 @@ export function selectSiswaSVC(req: IncomingMessage, res: ServerResponse) {
             res.end();
             return;
         }
+        let log = `${dateString()} ${timeString()} - User melihat detail siswa dengan filter ${classroom}, ${sortBy}, ${sortType}, limit=${limit}, offset=${offset}.\n`
+        console.log(log);
+        outputLog(log);
         res.write(JSON.stringify(siswa))
         res.end();
     });
@@ -91,6 +100,9 @@ export function insertSiswaSVC(req: IncomingMessage, res: ServerResponse) {
             res.statusCode = 400;
             res.end();
         }
+        let log = `${dateString()} ${timeString()} - User menambahkan siswa ${name} di kelas ${classroom}.\n`
+        console.log(log);
+        outputLog(log);
         res.write(`siswa ${name} dengan kelas ${classroom} berhasil ditambahkan`);
         res.end();
     })   
@@ -111,6 +123,9 @@ export function deleteSiswaSVC(req: IncomingMessage, res: ServerResponse) {
             res.statusCode = 400;
             res.end();
         }
+        let log = `${dateString()} ${timeString()} - User menghapus siswa ${name}.\n`
+        console.log(log);
+        outputLog(log);
         res.write(`siswa ${name} berhasil dihapus`);
         res.end();
     })   
@@ -133,7 +148,28 @@ export function updateSiswaSVC(req: IncomingMessage, res: ServerResponse) {
             res.statusCode = 400;
             res.end();
         }
+        let log = `${dateString()} ${timeString()} - User mengubah kelas ${name} menjadi ${classroom}.\n`
+        console.log(log);
+        outputLog(log);
         res.write(`kelas siswa ${name} diubah menjadi ${classroom}`);
         res.end();
     })   
+}
+
+function dateString() {
+    let currentDate = new Date();
+    let date = currentDate.getDate();
+    let month = currentDate.getMonth(); //Be careful! January is 0 not 1
+    let year = currentDate.getFullYear();
+
+    return `${date}-${(month + 1)}-${year}`;
+}
+
+function timeString() {
+    let currentTime = new Date;
+    let seconds = currentTime.getSeconds();
+    let minutes = currentTime.getMinutes();
+    let hour = currentTime.getHours();
+
+    return `${hour}:${minutes}:${seconds}`;
 }
